@@ -26,16 +26,22 @@ public class kata6 {
     
     public static void execute() throws IOException{
         List<String> mailList = input("C:\\Users\\hecku\\Downloads\\emails.txt");
-        Histogram<String> histogram = process(mailList);
-        output(histogram);
+        Histogram<String> histogramDomain = processDomain(mailList);
+        Histogram<String> histogramCharacter = processCharacter(mailList);
+        output(histogramDomain);
+        output(histogramCharacter);
     }
     
     public static List<String> input(String filename) throws IOException{
         return MailListreader.read(filename);
     }
     
-    public static Histogram<String> process(List<String> mailList){
-        return MailHistogramBuilder.build(mailList);
+    public static Histogram<String> processDomain(List<String> mailList){
+        return MailHistogramBuilder.buildDomain(mailList);
+    }
+    
+    public static Histogram<String> processCharacter(List<String> mailList){
+        return MailHistogramBuilder.buildCharacter(mailList);
     }
     
     public static void output(Histogram<String> histogram){

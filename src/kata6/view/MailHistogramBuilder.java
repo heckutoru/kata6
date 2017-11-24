@@ -16,7 +16,7 @@ import kata6.model.Mail;
  */
 public class MailHistogramBuilder {
     
-    public static Histogram<String> build(List<String> mail) {
+    public static Histogram<String> buildDomain(List<String> mail) {
         Histogram<String> histo = new Histogram<>();
         for (String mail1 : mail) {
             if(new Mail(mail1).getDomain().length() > 0){
@@ -25,4 +25,16 @@ public class MailHistogramBuilder {
         }
         return histo;
     }
+    
+        public static Histogram<String> buildCharacter(List<String> mail) {
+        Histogram<String> histo = new Histogram<>();
+        for (String mail1 : mail) {
+            if(mail1.charAt(0) != ' '){
+                String c0 = ""+mail1.charAt(0);
+                histo.increment(c0);
+            }
+        }
+        return histo;
+    }
+    
 }
