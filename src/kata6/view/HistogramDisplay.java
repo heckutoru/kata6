@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package kata4.view;
+package kata6.view;
 
 import java.awt.Container;
 import java.awt.Dimension;
-import kata4.model.Histogram;
+import kata6.model.Histogram;
 import org.jfree.chart.ChartPanel;
 import org.jfree.chart.JFreeChart;
 import org.jfree.data.category.DefaultCategoryDataset;

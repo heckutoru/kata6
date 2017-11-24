@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package kata4.view;
+package kata6.view;
 
 import java.util.List;
-import kata4.model.Histogram;
-import kata4.model.Mail;
+import kata6.model.Histogram;
+import kata6.model.Mail;
 
 
 /**
