@@ -14,7 +14,12 @@ import kata6.model.Mail;
  *
  * @author Entrar
  */
-public class MailHistogramBuilder {
+public class HistogramBuilder<T> {
+    private final List<T> items;
+    
+    public HistogramBuilder(List<T> items){
+        this.items = items;
+    }
     
     public static Histogram<String> buildDomain(List<String> mail) {
         Histogram<String> histo = new Histogram<>();
@@ -35,6 +40,10 @@ public class MailHistogramBuilder {
             }
         }
         return histo;
+    }
+    
+    public Integer getId() {
+        return id;
     }
     
 }

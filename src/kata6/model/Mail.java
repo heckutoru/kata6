@@ -12,12 +12,18 @@ import java.lang.String;
  */
 public class Mail {
     private String mail;
+    private Integer id;
     
-    public Mail(String mail){
+    public Mail(String mail,Integer id){
         this.mail = mail;
+        this.id = id;
     }
     
-    public String get() {
+    public Integer getId() {
+        return id;
+    }
+    
+    public String getMail() {
         return mail;
     }
     
