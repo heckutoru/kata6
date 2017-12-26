@@ -6,9 +6,7 @@
 package kata6.view;
 
 import java.util.List;
-import kata6.model.Histogram;
-import kata6.model.Mail;
-
+import kata6.model.*;
 
 /**
  *
@@ -21,29 +19,13 @@ public class HistogramBuilder<T> {
         this.items = items;
     }
     
-    public static Histogram<String> buildDomain(List<String> mail) {
-        Histogram<String> histo = new Histogram<>();
-        for (String mail1 : mail) {
-            if(new Mail(mail1).getDomain().length() > 0){
-                histo.increment(new Mail(mail1).getDomain());
-            }
-        }
+    public<A> Histogram<A> build(Attribute<T,A>	attribute){	
+	Histogram<A> histo = new Histogram<>();
+	for(T item:items){	
+            A value = attribute.get(item);	
+            histo.increment(value);
+	}
         return histo;
-    }
-    
-        public static Histogram<String> buildCharacter(List<String> mail) {
-        Histogram<String> histo = new Histogram<>();
-        for (String mail1 : mail) {
-            if(mail1.charAt(0) != ' '){
-                String c0 = ""+mail1.charAt(0);
-                histo.increment(c0);
-            }
-        }
-        return histo;
-    }
-    
-    public Integer getId() {
-        return id;
     }
     
 }
